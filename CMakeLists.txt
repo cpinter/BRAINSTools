@@ -8,6 +8,10 @@ endif()
 foreach(p
   CMP0054 # CMake 3.1 Only interpret ``if()`` arguments as variables or keywords when unquoted.
   CMP0042 # ``MACOSX_RPATH`` is enabled by default.
+
+## Im not sure what these do, but I want to get rid of the warnings
+  CMP0025 # AppleClang vs. regular Clang?
+  CMP0056 # linker something??
   )
   if(POLICY ${p})
     cmake_policy(SET ${p} NEW)
