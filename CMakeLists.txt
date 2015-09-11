@@ -1,3 +1,4 @@
+message( STATUS "In top-level CMake-Lists/txt" )
 cmake_minimum_required(VERSION 2.8.9)
 if(POLICY CMP0048)
   cmake_policy(SET CMP0048 OLD) #OLD project() behavior for setting VERSION variable
