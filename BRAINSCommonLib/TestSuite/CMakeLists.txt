@@ -1,4 +1,4 @@
-
+message( STATUS "In CMakeLists/txt for BRAINSCommonLib" )
 add_executable(PrettyPrintTableTest PrettyPrintTableTest.cxx)
 target_link_libraries(PrettyPrintTableTest BRAINSCommonLib)
 set_target_properties(PrettyPrintTableTest PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/testbin)
