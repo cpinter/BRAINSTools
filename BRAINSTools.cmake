@@ -1,4 +1,5 @@
 message( STATUS "In BRAINSTools.cmake" )
+message( STATUS "BRAINSTools_MAX_TEST_LEVEL 4 CACHE STRING is ${BRAINSTools_MAX_TEST_LEVEL}" )
 #-----------------------------------------------------------------------------
 # Update CMake module path
 #------------------------------------------------------------------------------
@@ -122,7 +123,10 @@ set(DART_TESTING_TIMEOUT ${CTEST_TEST_TIMEOUT} CACHE STRING "Maximum seconds all
 ## 7 - Run long running extensive test that are a burden to normal development (perhaps test 1x per week)
 ## 8 - Run tests that fail due to incomplete test building, these are good ideas for test that we don't have time to make robust)
 ## 9 - Run silly tests that don't have much untility
+message( STATUS "BRAINSTools_MAX_TEST_LEVEL 4 CACHE STRING is ${BRAINSTools_MAX_TEST_LEVEL}" )
+message( STATUS "setting test level again in cach??????" )
 set(BRAINSTools_MAX_TEST_LEVEL 4 CACHE STRING "Testing level for managing test burden")
+message( STATUS "BRAINSTools_MAX_TEST_LEVEL 4 CACHE STRING is ${BRAINSTools_MAX_TEST_LEVEL}" )
 
 #-----------------------------------------------------------------------
 # Setup locations to find externally maintained test data.
@@ -200,9 +204,9 @@ include_directories(${ITK_INSTALL_PREFIX}/install)
 #-----------------------------------------------------------------------------
 set(BRAINSToolsModules "")
 foreach(modulename ${brains_modulenames})
-  # message("DEFINED USE_${modulename} AND ${USE_${modulename}}")
+  message("DEFINED USE_${modulename} AND ${USE_${modulename}}")
   if(DEFINED USE_${modulename} AND USE_${modulename})
-  #  message("Adding ${modulename}")
+    message("Adding ${modulename}")
     add_subdirectory(${modulename})
     list(APPEND BRAINSToolsModules ${modulename})
   #else()
